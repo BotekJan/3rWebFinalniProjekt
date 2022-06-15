@@ -20,7 +20,9 @@
     <?php $this->load->view('layout/menu'); ?>
 
 
-
+    <?php
+        echo $content;
+        ?>
 
 
 </body>

@@ -49,6 +49,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'ContentController';
+$route['default_controller'] = 'Auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['Login'] = 'Auth/login';
+
+
+$route['Register'] = 'Auth/registerPage';
+$route['RegisterUser'] = 'Auth/register2';
+
+$route['Logout'] = 'Auth/logout';
+$route['Admin'] = 'Admin';
+
+$route['teams/(:num)/(:num)'] = 'ContentController/teams/$1/$2';
+
+$route['deleteTeam/(:num)'] = "ContentController/delete/$1";
+$route['editTeam/(:num)/'] = "ContentController/formTeam/$1/";
+$route['editTeam/send/(:num)/'] = "ContentController/editTeamSend/$1/";

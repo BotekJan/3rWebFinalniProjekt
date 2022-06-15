@@ -1,13 +1,24 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class AdminController extends CI_Controller
+class AdminController extends Admin_Controller
 {
 
-    public function index()
+    function __construct()
     {
-        $data["title"] = "Úvodní stránka";
-        $data["main"] = "welcome_message";
+        parent::__construct();
+    }
+
+    function index()
+    {
+        $data["title"] = "Login";
+        $data["main"] = "adminPage";
         $this->layout->generate($data);
+    }
+
+    function logout()
+    {
+        $this->ion_auth->logout();
+        redirect('/');
     }
 }
